@@ -2344,7 +2344,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1522423194}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: PanelActiveDesactive
+        m_MethodName: SettingsActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1022503062}

@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    private float inputTempo;
-    private float inputSpawn;
+    private double inputTempo;
+    private double inputSpawn;
 
     public GameObject panelSettings;
     public GameObject panelMenu;
@@ -37,11 +37,11 @@ public class UIController : MonoBehaviour
     //Metodos para pegar  o input do inputfield e referencia as consecutivas variaveis de tempo e de spawn
     public void ReadinputTime(string s)
     {
-        inputTempo = float.Parse(s);
+        inputTempo = double.Parse(s);
     }
     public void ReadinputSpawn(string s)
     {
-        inputSpawn = float.Parse(s);
+        inputSpawn = double.Parse(s);
     }
 
     //Metodo para ativar e desativar paines de menu, gameover, win e etc...
@@ -50,6 +50,19 @@ public class UIController : MonoBehaviour
         if (panel.activeSelf == true)
         {
             panel.SetActive(false);
+        }
+        else
+        {
+            panel.SetActive(true);
+        }
+    }
+    public void SettingsActive(GameObject panel)
+    {
+        if (panel.activeSelf == true)
+        {
+            panel.SetActive(false);
+            _gamerController.timeGaming = inputTempo;
+            _gamerController.coldowSpawnEnemys = inputSpawn;
         }
         else
         {

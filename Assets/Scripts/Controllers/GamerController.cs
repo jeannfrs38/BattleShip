@@ -5,9 +5,9 @@ using UnityEngine;
 public class GamerController : MonoBehaviour
 {
     //Variaveis controle de tempo do jogo e spawn de inimigos do tipo chaser
-    [SerializeField] private float timeGaming;
+    public double timeGaming;
     [SerializeField] private double timeCurrent;
-    [SerializeField] private float coldowSpawnEnemys;
+    public double coldowSpawnEnemys;
     [SerializeField] private float startLastSpawn;
     [SerializeField] public float startLastSpawn1;
 
@@ -73,7 +73,7 @@ public class GamerController : MonoBehaviour
     {
         if (Time.time > coldowSpawnEnemys + startLastSpawn)
         {
-            startLastSpawn += Time.time;
+            startLastSpawn = Time.time;
             currentShips[0] = Instantiate(shipChaser, ports[0].transform.position, ports[0].transform.rotation);
 
         }
@@ -82,7 +82,7 @@ public class GamerController : MonoBehaviour
     {
         if (Time.time > coldowSpawnEnemys + startLastSpawn1)
         {
-            startLastSpawn1 += Time.time;
+            startLastSpawn1 = Time.time;
             currentShips[1] = Instantiate(shipChaser, ports[1].transform.position, ports[1].transform.rotation);
 
         }

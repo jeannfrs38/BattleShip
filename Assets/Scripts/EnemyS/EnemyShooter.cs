@@ -16,7 +16,7 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] private bool collisionPlayer;
     [SerializeField] private bool collisionWall;
     [SerializeField] private bool ReceivedDamage;
-    [SerializeField] private bool death;
+
 
 
     public Rigidbody2D rb;
@@ -64,7 +64,7 @@ public class EnemyShooter : MonoBehaviour
         {
             if (life > 0)
             {
-                death = false;
+
                 // Maquina de estado do Shooter
                 switch (state)
                 {
